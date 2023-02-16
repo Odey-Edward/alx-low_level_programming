@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $CFILE | tr -s ".c" ".s" | xargs gcc -S $CFILE -o
