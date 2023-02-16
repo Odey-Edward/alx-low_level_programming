@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main print out text ot standard ouput
+ * main - print out text ot standard ouput.
  *
  * Return: zero
  */
