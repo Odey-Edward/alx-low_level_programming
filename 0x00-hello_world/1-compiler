@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $CFILE | tr -s ".c" ".o" | xargs gcc -S $CFILE -o
+echo $CFILE | tr -s ".c" ".o" | xargs gcc -c $CFILE -o
