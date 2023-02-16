@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -s $CFILE -o main.o
+echo $CFILE | tr -s ".c" ".o" | xargs gcc -S $CFILE -o
