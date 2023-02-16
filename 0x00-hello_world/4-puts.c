@@ -1,12 +1,14 @@
 #include <stdio.h>
 
-/*
- * main: Programming is like a multi puzzle
+/**
+ * main - out text o standard ouput
+ *
+ * Return: zero
  */
-
 int main(void)
-{
-	puts("\"Programming is like building a multilingual puzzle");
 
-	return(0);
+{
+	puts("\"Programming is like building a multilingual puzzle\n");
+
+	return (0);
 }
