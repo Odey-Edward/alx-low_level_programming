@@ -2,19 +2,17 @@
 
 int main(void)
 {
-	char c;
+	int i = -20;
+	int j;
 
-	c = getchar();
-
-	if (c >= 'a' || c <= 'z')
+	if (i < 0)
 	{
-		printf("%d\n", 1);
-		putchar(48);
-		putchar('\n');
+		j = (i * i) / i;
+		printf("%d\n", j);
 	}
 	else
 	{
-		printf("%d\n", 0);
+		printf("%d\n", i);
 	}
 	return 0;
 }
