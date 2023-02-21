@@ -2,17 +2,9 @@
 
 int main(void)
 {
-	int i = -20;
-	int j;
+	int i = 10
 
-	if (i < 0)
-	{
-		j = (i * i) / i;
-		printf("%d\n", j);
-	}
-	else
-	{
-		printf("%d\n", i);
-	}
+	putchar(i / 10);
+	putchar(i % 10);
 	return 0;
 }
