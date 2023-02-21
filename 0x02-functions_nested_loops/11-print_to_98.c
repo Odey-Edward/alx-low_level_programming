@@ -6,7 +6,6 @@
  *
  * @n: the number to start counting from to 98
  * Return: Always 0 (Success)
- * Author: IanoNjuguna
  */
 
 void print_to_98(int n)
