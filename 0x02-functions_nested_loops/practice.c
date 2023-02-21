@@ -9,6 +9,8 @@ int main(void)
 	if (c >= 'a' || c <= 'z')
 	{
 		printf("%d\n", 1);
+		putchar(48);
+		putchar('\n');
 	}
 	else
 	{
