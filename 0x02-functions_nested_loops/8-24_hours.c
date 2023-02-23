@@ -5,7 +5,6 @@
  *
  * @j && @k: Contains the value to be printed
  * Return: Always 0 (Success)
- * Author: IanoNjuguna
  */
 
 void jack_bauer(void)

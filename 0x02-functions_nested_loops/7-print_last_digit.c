@@ -5,7 +5,6 @@
  *
  * @j: The last digit of this value is what we're looking for
  * Return: Always 0 (Success)
- * Author: IanoNjuguna
  */
 
 int print_last_digit(int j)

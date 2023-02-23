@@ -7,7 +7,6 @@
  * @i: First integer value
  * @j: Second integer value
  * Return: Always 0 (Success)
- * Author: IanoNjuguna
  */
 
 int add(int i, int j)
