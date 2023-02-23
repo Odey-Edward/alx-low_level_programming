@@ -3,7 +3,6 @@
  * main - causes an infinite loop
  *
  * Return: Always 0 (Success)
- * Author: IanoNjuguna
  */
 int main(void)
 {
