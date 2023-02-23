@@ -19,8 +19,9 @@ int main(void)
 
 	printf("%02d/%02d/%04d/\n", mouth, day, year);
 
-	print_remaining_days(mouth, day, year);
+	day = convert_day(month, day);
 
+	print_remaining_days(mouth, day, year);
 	return (0);
 }
 
