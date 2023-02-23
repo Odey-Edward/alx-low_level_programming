@@ -4,6 +4,8 @@
 * _isupper - check for uppercase alphabet
 *
 * @c: integer
+*
+* Return: 1 else 0
 */
 int _isupper(int c)
 {
