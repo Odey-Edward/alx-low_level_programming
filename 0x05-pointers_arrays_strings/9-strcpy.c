@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
-* _strcpy - copty src to dest
+* _strcpy - copy src to dest
 *
 * @dest: pointer
 * @char: pointer
