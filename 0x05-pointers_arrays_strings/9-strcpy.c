@@ -5,7 +5,7 @@
 * _strcpy - copy src to dest
 *
 * @dest: pointer
-* @char: pointer
+* @src: pointer
 * Return: dest (success)
 */
 char *_strcpy(char *dest, char *src)
