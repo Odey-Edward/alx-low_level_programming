@@ -3,44 +3,18 @@
 /**
 *
 */
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_strchr(char *s, char c)
 {
-	int i;
-
-	for (i = 0; i < n; i++)
+	while (*s != '\0')
 	{
-		*(dest + i) = *(src + i);
+		if (c == *s)
+		{
+			return (s);
+		}
+		s++;
 	}
-	return (dest);
+	return (0);
 }
-/**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
- *
- * Return: Nothing.
- */
-void simple_print_buffer(char *buffer, unsigned int size)
-{
-    unsigned int i;
-
-    i = 0;
-    while (i < size)
-    {
-        if (i % 10)
-        {
-            printf(" ");
-        }
-        if (!(i % 10) && i)
-        {
-            printf("\n");
-        }
-        printf("0x%02x", buffer[i]);
-        i++;
-    }
-    printf("\n");
-}
-
 /**
  * main - check the code
  *
@@ -48,12 +22,14 @@ void simple_print_buffer(char *buffer, unsigned int size)
  */
 int main(void)
 {
-    char buffer[98] = {0};
-    char buffer2[98] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+    char *s = "hello";
+    char *f;
 
-    simple_print_buffer(buffer, 98);
-    _memcpy(buffer + 50, buffer2, 10);
-    printf("-------------------------------------------------\n");
-    simple_print_buffer(buffer, 98);
+    f = _strchr(s, 'l');
+
+    if (f != NULL)
+    {
+        printf("%s\n", f);
+    }
     return (0);
 }
