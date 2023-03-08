@@ -3,21 +3,20 @@
 /**
 *
 */
-char *_strchr(char *s, char c)
+unsigned int _strspn(char *s, char *accept)
 {
-	while (*s != '\0')
+	int num;
+
+	num = 1;
+	while (*accept != '\0')
 	{
-		if (c == *s)
+		if (*accept == *s)
 		{
-			return (s);
+			num++;
 		}
-		s++;
+		accept++;
 	}
-	if (c == *s)
-	{
-		return (s);
-	}
-	return (0);
+	return (num);
 }
 /**
  * main - check the code
@@ -26,14 +25,11 @@ char *_strchr(char *s, char c)
  */
 int main(void)
 {
-    char *s = "hello";
-    char *f;
+    char *s = "hello, world";
+    char *f = "oleh";
+    unsigned int n;
 
-    f = _strchr(s, 'l');
-
-    if (f != NULL)
-    {
-        printf("%s\n", f);
-    }
+    n = _strspn(s, f);
+    printf("%u\n", n);
     return (0);
 }
