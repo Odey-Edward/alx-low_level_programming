@@ -18,11 +18,11 @@ int main(int argc, char *argv[])
 			mul *= atoi(argv[i]);
 		}
 		printf("%d\n", mul);
-		return (0);
+		exit(EXIT_SUCCESS);
 	}
 	else
 	{
 		printf("Error\n");
-		return (1);
+		exit(EXIT_FAILURE);
 	}
 }
