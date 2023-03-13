@@ -8,6 +8,8 @@
 */
 int main(int agrc, char *agrv[])
 {
+	(void)agrc;
+
 	printf("%s\n", agrv[0]);
 
 	return (0);
