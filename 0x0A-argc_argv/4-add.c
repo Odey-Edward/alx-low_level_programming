@@ -1,36 +1,35 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
 
 /**
 *
 */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
-	int alpha = isalpha(argv);
+	int i, len, j, sum = 0;
+	char *ptrc;
 
-if (argc > 1)
+if (argc > 2)
 {
-	for (i = 0; i < argc; i++)
+	for (i = 1; i < argc; i++)
 	{
-		if (alpha == 1)
+		ptrc = *(argv + i);
+		len = strlen(ptrc);
+
+		for (j = 0; j < len; j++)
 		{
+			if (isalpha(ptrc[j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
 			sum += atoi(argv[i]);
-		}
-		else
-		{
-			break;
-		}
 	}
-	if (alpha == 1)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	else
-	{
 		printf("%d\n", sum);
-	}
 }
 else
 {
