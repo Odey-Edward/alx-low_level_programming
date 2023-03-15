@@ -34,13 +34,13 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		for (i = 0; s1[i]; i++, j++)
+		for (i = 0; s1[i]; i++)
 		{
-			result[j] = s1[i];
+			result[j++] = s1[i];
 		}
-		for (i = 0; s2[i]; i++, j++)
+		for (i = 0; s2[i]; i++)
 		{
-			result[j] = s2[i];
+			result[j++] = s2[i];
 		}
 		result[j] = '\0';
 	}
