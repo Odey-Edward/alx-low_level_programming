@@ -18,11 +18,11 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	else if (s1 == NULL)
+	if (s1 == NULL)
 	{
 		return (s2);
 	}
-	else
+	if (s2 == NULL)
 	{
 		return (s1);
 	}
@@ -47,6 +47,6 @@ char *str_concat(char *s1, char *s2)
 			result[len1] = s2[i];
 		}
 		result[len1] = '\0';
-		return (result);
 	}
+	return (result);
 }
