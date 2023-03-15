@@ -28,7 +28,8 @@ char *str_concat(char *s1, char *s2)
 	}
 	if (s2 == NULL)
 	{
-		return (s1);
+		s2 = strdup(s1);
+		return (s2);
 	}
 
 	result = malloc(sizeof(char) * (len1 + len2 + 1));
