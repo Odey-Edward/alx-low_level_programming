@@ -18,6 +18,8 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
+		len2 = 0;
+
 		for (i = 0; s2[i]; i++)
 		{
 			len2++;
@@ -30,6 +32,8 @@ char *str_concat(char *s1, char *s2)
 		}
 		else
 		{
+			len1 = 0;
+
 			for (i = 0; s1[i]; i++)
 			{
 				len1++;
