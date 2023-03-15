@@ -37,6 +37,5 @@ char *_strdup(char *str)
 		}
 		duplicate[len] = '\0';
 	}
-	free(duplicate);
 	return (duplicate);
 }
