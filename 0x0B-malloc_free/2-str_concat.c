@@ -23,21 +23,8 @@ char *str_concat(char *s1, char *s2)
 	}
 	if (s1 == NULL)
 	{
-		s1 = malloc(sizeof(char) * (len2 + 1));
-
-		if (s1 == NULL)
-		{
-			return (NULL);
-		}
-		else
-		{
-			for (i = 0; s2[i]; i++)
-			{
-				s1[i] = s2[i];
-			}
-			s1[i] = '\0';
-			return (s1);
-		}
+		s1 = strdup(s2);
+		return (s1);
 	}
 	if (s2 == NULL)
 	{
