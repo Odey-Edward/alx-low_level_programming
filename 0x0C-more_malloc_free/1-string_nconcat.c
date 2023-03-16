@@ -41,7 +41,7 @@ char *full_concat(char *str1, char *str2)
 char *patial_concat(char *str1, char *str2, unsigned int size)
 {
 	char *str;
-	int i, j = 0, len1;
+	unsigned int i, j = 0, len1;
 
 	len1 = strlen(str1);
 
