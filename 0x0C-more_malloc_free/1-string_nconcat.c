@@ -17,7 +17,7 @@ char *full_concat(char *str1, char *str2)
 	len1 = strlen(str1);
 	len2 = strlen(str2);
 
-	str = malloc(sizeof(char *) * (len1 + len2) + 1);
+	str = malloc(sizeof(char) * (len1 + len2) + 1);
 	if (str == NULL)
 		return (NULL);
 
@@ -38,14 +38,14 @@ char *full_concat(char *str1, char *str2)
 * @size: size of str2
 * Return: pointer
 */
-char *patial_concat(char *str1, char *str2, int size)
+char *patial_concat(char *str1, char *str2, unsigned int size)
 {
 	char *str;
 	int i, j = 0, len1;
 
 	len1 = strlen(str1);
 
-	str = malloc(sizeof(char *) * (len1 + size) + 1);
+	str = malloc(sizeof(char) * (len1 + size) + 1);
 	if (str == NULL)
 		return (NULL);
 
