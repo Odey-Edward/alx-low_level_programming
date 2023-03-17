@@ -12,14 +12,14 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	void **ptr;
+	void *ptr;
 
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
 
-	ptr = malloc(sizeof(void *) * nmemb);
+	ptr = malloc(size * nmemb);
 	if (ptr == NULL)
 	{
 		return (NULL);
@@ -27,11 +27,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	for (i = 0; i < nmemb; i++)
 	{
-		ptr[i] = malloc(size);
-		if (ptr[i] == NULL)
-		{
-			return (NULL);
-		}
 		memset(ptr[i], 0, size);
 	}
 	return (ptr);
