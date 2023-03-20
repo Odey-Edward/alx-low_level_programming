@@ -21,22 +21,21 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		newM = malloc(new_size);
 		if (newM == NULL)
-			free(newM);
 			return (NULL);
 
 		return (newM);
 	}
-	if (ptr == NULL && new_size == 0)
+	if (ptr != NULL && new_size == 0)
+	{
 		free(ptr);
 		return (ptr);
-
+	}
 
 	ptr_copy = ptr;
 
 	newM = malloc(sizeof(*ptr_copy) * new_size);
 
 	if (newM == NULL)
-		free(newM);
 		return (NULL);
 
 	newM_copy = newM;
