@@ -56,9 +56,7 @@ void print_all(const char * const format, ...)
 	int i, len, j;
 	char *separator = ", ";
 
-	va_start(op, format);
-
-	printer_t args[] = {
+	print_t args[] = {
 
 			{"c", print_char},
 			{"i", print_int},
@@ -67,6 +65,7 @@ void print_all(const char * const format, ...)
 			{NULL, NULL}
 	};
 
+	va_start(op, format);
 	len = strlen(format);
 
 	i = 0;
