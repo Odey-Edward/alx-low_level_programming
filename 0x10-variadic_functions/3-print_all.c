@@ -31,7 +31,7 @@ void print_int(va_list arg)
 	int num;
 
 	num = va_arg(arg, int);
-	printf("%d", num);
+	prefeintf("%d", num);
 }
 
 /**
