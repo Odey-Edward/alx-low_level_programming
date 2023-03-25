@@ -89,7 +89,6 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(args, format);
->>>>>>> 1dd012a6bd84bfe237202740aaf16f87ce6d7b6d
 
 	while (format && (*(format + i)))
 	{
