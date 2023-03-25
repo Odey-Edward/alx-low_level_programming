@@ -72,7 +72,7 @@ void print_all(const char * const format, ...)
 	while (i < len)
 	{
 		j = 0;
-		while (arg[j].symbol)
+		while (*(arg[j].symbol))
 		{
 			if (*(arg[j].symbol) == format[i])
 			{
