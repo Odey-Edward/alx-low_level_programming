@@ -69,7 +69,7 @@ void print_all(const char * const format, ...)
 	va_start(pl, format);
 
 	i = 0;
-	while (*(format + i))
+	while (format && *(format + i))
 	{
 		j = 0;
 		while (arg[j].symbol)
