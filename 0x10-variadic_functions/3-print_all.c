@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "variadic_functions.h"
 #include <stdarg.h>
-#include <string.h>
 
 /**
 * print_char - print a character
@@ -56,7 +55,7 @@ void print_str(va_list pl)
 void print_all(const char * const format, ...)
 {
 	va_list pl;
-	int i, j, len;
+	int i, j;
 	char *separator = "";
 
 	print_t arg[] = {
@@ -69,10 +68,8 @@ void print_all(const char * const format, ...)
 
 	va_start(pl, format);
 
-	len = strlen(format);
-
 	i = 0;
-	while (i < len)
+	while (format[i])
 	{
 		j = 0;
 		while (arg[j].symbol)
