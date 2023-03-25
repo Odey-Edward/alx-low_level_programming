@@ -18,6 +18,6 @@ typedef struct printer
 	char *symbol;
 	void (*print)(va_list arg);
 
-}print_t;
+} print_t;
 
 #endif
