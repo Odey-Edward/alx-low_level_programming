@@ -36,14 +36,17 @@ void print_int(va_list pl)
 */
 void print_str(va_list pl)
 {
-	if (va_arg(pl, char *) != NULL)
-	{
-		printf("%s", va_arg(pl, char *));
-	}
-	else
+	char *str;
+
+	str = va_arg(pl, char *);
+
+	if (str == NULL)
 	{
 		printf("(nil)");
+		return;
 	}
+
+	printf("%s", str);
 }
 
 /**
@@ -54,7 +57,7 @@ void print_all(const char * const format, ...)
 {
 	va_list pl;
 	int i, j, len;
-	char *separator = ", ";
+	char *separator = "";
 
 	print_t arg[] = {
 			{"c", print_char},
@@ -72,12 +75,13 @@ void print_all(const char * const format, ...)
 	while (i < len)
 	{
 		j = 0;
-		while (*(arg[j].symbol))
+		while (arg[j].symbol)
 		{
 			if (*(arg[j].symbol) == format[i])
 			{
-				arg[j].print(pl);
 				printf("%s", separator);
+				arg[j].print(pl);
+				separator = ", ";
 			}
 			j++;
 		}
