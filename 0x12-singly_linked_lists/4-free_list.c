@@ -9,7 +9,7 @@ void free_list(list_t *head)
 {
 	/* temporary list structure */
 	list_t *tmp;
-	
+
 	/* check if head is NULL */
 	while (head)
 	{
