@@ -30,6 +30,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			return (-1);
 
 		copy = copy->next;
+		i++;
 	}
 	tmp = copy->next;
 	copy->next = tmp->next;
