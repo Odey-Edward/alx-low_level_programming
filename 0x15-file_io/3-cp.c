@@ -40,7 +40,7 @@ int main(int ac, char **av)
 	}
 
 	fd = open(av[1], O_RDONLY);
-	fd2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	error_check(fd, fd2, av);
 
 	r = 1024;
