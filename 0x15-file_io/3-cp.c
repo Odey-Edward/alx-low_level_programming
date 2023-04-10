@@ -10,7 +10,8 @@
 */
 int main(int ac, char **av)
 {
-	int fd, fd2, c, w, r, c2;
+	int fd, fd2;
+	ssize_t c, w, r, c2;
 	char buffer[1024];
 
 	if (ac != 3)
