@@ -47,19 +47,22 @@ int main(int ac, char **av)
 	while (r > 0)
 	{
 		r = read(fd, buffer, 1024);
+		if (r == -1)
+			error_check(r, 0, av);
 		w = write(fd2, buffer, r);
-		error_check(r, w, av);
-	}
-	c = close(fd);
-	if (c == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		exit(100);
+		if (w == -1)
+			error_check(0, w, av);
 	}
 	c = close(fd2);
 	if (c == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
+		exit(100);
+	}
+	c = close(fd);
+	if (c == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 return (0);
