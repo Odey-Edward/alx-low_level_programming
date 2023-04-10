@@ -26,7 +26,7 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	fd2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	fd2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	w = write(fd2, buffer, r);
 	if (fd2 == -1 || w == -1)
 	{
