@@ -40,18 +40,15 @@ int main(int ac, char **av)
 	}
 
 	fd = open(av[1], O_RDONLY);
-	fd2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	fd2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	error_check(fd, fd2, av);
 
 	r = 1024;
 	while (r > 0)
 	{
 		r = read(fd, buffer, 1024);
-		if (r == -1)
-			error_check(r, 0, av);
 		w = write(fd2, buffer, r);
-		if (w == -1)
-			error_check(0, w, av);
+		error_check(r, w, av);
 	}
 	c = close(fd2);
 	if (c == -1)
