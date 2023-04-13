@@ -1,17 +1,16 @@
 #include <stdio.h>
 #include "3-calc.h"
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+
 /**
 * main - Entry point
 * @argc: argument count
 * @argv: argument vector
 * Return: always 0
 */
-int main( int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	int num1, num2, result;
+	int num1, num2;
 	char *op;
 
 	if (argc != 4)
@@ -37,8 +36,6 @@ int main( int argc, char *argv[])
 		exit(100);
 	}
 
-	result = get_op_func(op)(num1, num2);
-
-	printf("%d\n", result);
+	printf("%d\n", get_op_func(op)(num1, num2);
 	return (0);
 }
