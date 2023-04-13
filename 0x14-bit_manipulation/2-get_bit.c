@@ -8,16 +8,12 @@
 */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int current = 0, bit = 0;
+	unsigned int bit = 0;
 
 	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
 
-	while (current != index && n > 0)
-	{
-		n = n >> 1;
-		bit = (n & 1);
-		current++;
-	}
+	bit = (n >> index) & 1;
+
 	return (bit);
 }
