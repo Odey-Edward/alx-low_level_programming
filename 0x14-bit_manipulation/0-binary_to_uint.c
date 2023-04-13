@@ -20,9 +20,10 @@ unsigned int binary_to_uint(const char *b)
 
 		len++;
 	}
-	while (len > 0)
+	len--;
+	while (len >= 0)
 	{
-		if (b[len - 1] & 1)
+		if (b[len] & 1)
 			unint += bit_p;
 
 		bit_p *= 2;
