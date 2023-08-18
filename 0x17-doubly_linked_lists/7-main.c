@@ -10,7 +10,7 @@
  */
 int main(void)
 {
-    dlistint_t *head;
+    dlistint_t *head, *new;
 
     head = NULL;
     add_dnodeint_end(&head, 0);
@@ -23,8 +23,16 @@ int main(void)
     add_dnodeint_end(&head, 1024);
     print_dlistint(head);
     printf("-----------------\n");
-    insert_dnodeint_at_index(&head, 7, 4096);
+    new = insert_dnodeint_at_index(&head, 0, -33);
     print_dlistint(head);
+    if (new == NULL)
+    {
+	    printf("Node is NULL\n");
+    }
+    else
+    {
+	    printf("Head is not NULL\n");
+    }
     free_dlistint(head);
     head = NULL;
     return (EXIT_SUCCESS);
