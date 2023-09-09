@@ -32,8 +32,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else if (strcmp(ht->array[index]->key, key) == 0)
 	{
 		/* modify the value */
+		if (modify_val(ht, index, value) == 0)
+			return (0);
 
-		strcpy(ht->array[index]->value, value);
 		return (1);
 	}
 
@@ -89,11 +90,11 @@ hash_node_t *create_item(const char *key, const char *value)
 		return (NULL);
 
 
-	new_node->key = malloc(strlen(key) + 1);
+	new_node->key = malloc((strlen(key) + 1));
 	if (new_node->key == NULL)
 		return (NULL);
 
-	new_node->value = malloc(strlen(value) + 1);
+	new_node->value = malloc((strlen(value) + 1));
 	if (new_node->value == NULL)
 		return (NULL);
 
@@ -102,4 +103,26 @@ hash_node_t *create_item(const char *key, const char *value)
 	new_node->next = NULL;
 
 	return (new_node);
+}
+
+/**
+ * modify_val - handle collision when neccessary
+ * @ht: Hash Table
+ * @index: the index associated with the element to modify
+ * @value: the new value
+ * Return: 1 if it succeeded, 0 otherwise
+ */
+int modify_val(hash_table_t *ht, unsigned long int index, const char *value)
+{
+
+	free(ht->array[index]->value);
+
+	/* Allocate new memmory address */
+	ht->array[index]->value = malloc((strlen(value) + 1));
+
+	if (!ht->array[index]->value)
+		return (0);
+
+	strcpy(ht->array[index]->value, value);
+	return (1);
 }
