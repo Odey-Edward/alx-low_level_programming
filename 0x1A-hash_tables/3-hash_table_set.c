@@ -12,7 +12,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *item;
 	unsigned long int index;
 
-	if (!key)
+	if (!key || !ht)
 		return (0);
 
 	/* Get the index to insect */
@@ -37,12 +37,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}
 
-
 	/* Handle collision */
-	if (handle_collision(ht, key, value) == 0)
-		return (0);
+	if (handle_collision(ht, key, value) == 1)
+		return (1);
 
-	return (1);
+	return (0);
 }
 
 /**
@@ -55,10 +54,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 int handle_collision(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t *head, *new;
+	hash_node_t *new;
 
 	index = key_index((const unsigned char *)key, ht->size);
-	head = ht->array[index];
+
 
 	/* create new node */
 	new = create_item(key, value);
@@ -66,8 +65,8 @@ int handle_collision(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	/* insect new_node to the head of the collision chain */
-	new->next = head;
-	head = new;
+	new->next = ht->array[index];
+	ht->array[index] = new;
 
 	return (1);
 }
