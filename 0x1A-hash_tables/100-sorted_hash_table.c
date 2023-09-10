@@ -128,7 +128,7 @@ void insert_sorted(shash_table_t *ht, shash_node_t *item)
 }
 
 /**
- * handle_collision - handle collision when neccessary
+ * handle_scollision - handle collision when neccessary
  * @ht: Hash Table
  * @key: the key associated with the value
  * @value: the value associated with the key
@@ -160,7 +160,7 @@ int handle_scollision(shash_table_t *ht, const char *key, const char *value)
 
 
 /**
- * create_item - create item / element in the hash table
+ * create_sitem - create item / element in the hash table
  * @key: a unique key
  * @value: the value associated with the key
  * Return: the new item else NULL
@@ -195,7 +195,7 @@ shash_node_t *create_sitem(const char *key, const char *value)
 
 
 /**
- * modify_val - handle collision when neccessary
+ * modify_sval - handle collision when neccessary
  * @ht: Hash Table
  * @index: the index associated with the element to modify
  * @value: the new value
@@ -291,32 +291,32 @@ void shash_table_print(const shash_table_t *ht)
  */
 void shash_table_print_rev(const shash_table_t *ht)
 {
-        shash_node_t *tmp;
-        int sep;
+	shash_node_t *tmp;
+	int sep;
 
-        if (!ht)
-                return;
+	if (!ht)
+		return;
 
-        sep = 0;
-        printf("{");
+	sep = 0;
+	printf("{");
 
-        tmp = ht->stail;
-        while (tmp)
-        {
-                if (sep)
-                        printf(", ");
-                printf("'%s': '%s'", tmp->key, tmp->value);
-                sep = 1;
-                tmp = tmp->sprev;
+	tmp = ht->stail;
+	while (tmp)
+	{
+		if (sep)
+			printf(", ");
+		printf("'%s': '%s'", tmp->key, tmp->value);
+		sep = 1;
+		tmp = tmp->sprev;
 
-        }
-        printf("}\n");
+	}
+	printf("}\n");
 }
 
 
 
 /**
- * hash_table_delete - deletes a hash table.
+ * shash_table_delete - deletes a hash table.
  * @ht: the hash table
  */
 void shash_table_delete(shash_table_t *ht)
@@ -339,7 +339,7 @@ void shash_table_delete(shash_table_t *ht)
 }
 
 /**
- * free_ht_items - free hash table item
+ * free_sht_items - free hash table item
  * @head: head of a hash_node_t linked list
  */
 void free_sht_items(shash_node_t *head)
