@@ -111,8 +111,7 @@ void insert_sorted(shash_table_t *ht, shash_node_t *item)
 	}
 
 	/* insect between sorted list */
-	while (tmp->snext && *((tmp->snext)->key) < *((item)->key))
-		tmp = tmp->snext;
+	tmp = insert_logic(tmp, item);
 
 	if (tmp->snext)
 		tmp->snext->sprev = item;
@@ -127,6 +126,35 @@ void insert_sorted(shash_table_t *ht, shash_node_t *item)
 
 }
 
+/**
+ * insert_logic - compute the logic for node insertion
+ * @tmp: temporary variable that holds the pointer to
+ * a shash_node_t linked list
+ * @item: the item to compare for insertion
+ * Return: @tmp with a valid position to insert
+ */
+shash_node_t *insert_logic(shash_node_t *tmp, shash_node_t *item)
+{
+	char *tmp2, *item_tmp;
+
+	while (tmp->snext)
+	{
+		item_tmp = item->key;
+		tmp2 = (tmp->snext)->key;
+
+		while (*tmp2 && (*tmp2 == *item_tmp))
+		{
+			tmp2++;
+			item_tmp++;
+		}
+
+		if (*tmp2  > *item_tmp)
+			break;
+
+		tmp = tmp->snext;
+	}
+	return (tmp);
+}
 /**
  * handle_scollision - handle collision when neccessary
  * @ht: Hash Table

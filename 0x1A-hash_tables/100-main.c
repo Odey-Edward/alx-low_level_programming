@@ -4,14 +4,13 @@
 #include "hash_tables.h"
 
 /**
- * main - check the code
+ * main - check the code for Holberton School students.
  *
  * Return: Always EXIT_SUCCESS.
  */
 int main(void)
 {
 	shash_table_t *ht;
-	/*char *value;*/
 
 	ht = shash_table_create(30);
 	shash_table_set(ht, "USA", "Washington");
@@ -28,9 +27,6 @@ int main(void)
 	shash_table_set(ht, "Iceland", "Reykjavik");
 	shash_table_set(ht, "Japan", "Tokyo");
 	shash_table_set(ht, "Australia", "Canberra");
-
-	shash_table_print(ht);
-	printf("\n\n........................................................\n\n");
 
 	shash_table_print_rev(ht);
 	return (EXIT_SUCCESS);

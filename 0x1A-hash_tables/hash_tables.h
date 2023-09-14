@@ -1,6 +1,7 @@
 #ifndef HASH_H
 #define HASH_H
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -97,5 +98,6 @@ shash_node_t *create_sitem(const char *key, const char *value);
 void insert_sorted(shash_table_t *ht, shash_node_t *item);
 int modify_sval(shash_table_t *ht, unsigned long int index, const char *value);
 int handle_scollision(shash_table_t *ht, const char *key, const char *value);
+shash_node_t *insert_logic(shash_node_t *tmp, shash_node_t *item);
 
 #endif
